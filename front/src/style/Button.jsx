@@ -3,19 +3,25 @@ import styled from "styled-components";
 const StyledButton = styled.button`
   width: 100px;
   height: 40px;
-  line-height: 40px;
+  line-height: 20px;
   font-weight: 500;
   border-radius: 5px;
   border: none;
-  background: ${(props) => props.background || "green" };
-  color: ${(props) => props.color || "white" };
+  background-color: ${({theme}) => theme.bgBtnreg};
   &:hover{
     cursor: pointer;
   }
-`
+  ${(props)=>props.delete && 
+  `background-color: #DC4B48`};
+  ${(props)=>props.done && 
+    `background-color: #0B87BA`};
+`  
 
-export default function Button({children, color, background}){
+/* ${(props)=>props.children=="완료" && 
+`background-color: ${({theme}) => theme.bgBtndone}`}; */
+
+export default function Button({children, ...props}){
   return(
-    <StyledButton color={color} background={background}>{children}</StyledButton>
+    <StyledButton {...props}>{children}</StyledButton>
   );
 }

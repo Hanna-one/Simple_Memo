@@ -7,7 +7,7 @@ const ContentSection = styled.div`
 `
 
 const MenuWrap = styled.div`
-  padding: 20px;
+  padding: 0 20px 20px;
   display: flex;
   justify-content: space-between;
 `

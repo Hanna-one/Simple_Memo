@@ -4,26 +4,31 @@ import Button from "../style/Button";
 import { ContentSection, MenuWrap } from "../components/Section";
 import { MdColorLens } from "react-icons/md";
 
-const Search = styled.div`
-  padding: 10px;
+const Search = styled.input`
   width: 50%;
   height: 40px;
   line-height: 20px;
-  border: 1px solid gray;
+  border: 1px solid ${({theme})=>theme.border};
 `
 const SortMenu = styled.select`
   width: 30%;
   height: 40px;
-  line-height: 40px;
+  padding: 5px;
+  border: 1px solid ${({theme})=>theme.border};
 `
 const ContentBox = styled.div`
   padding: 10px;
   height: 120px;
-  border: 1px solid gray;
+  border: 1px solid ${({theme})=>theme.border};
+  border-radius: 5px;
+  background-color: ${({theme}) => theme.textbox};
   &:hover{
     cursor: pointer;
   }
-`
+  &:not(:last-of-type){
+    margin-bottom: 10px;
+  }
+  `
 
 const ContentText = styled.div`
   margin: 5px;
@@ -36,9 +41,9 @@ const ContentText = styled.div`
 
 function Content() {
   return (
-    <>
-      <div style={{ textAlign: "right", padding: "0 20px"}}>
-        <Button color="black" background="#F3AE5F">메모하기</Button>
+    <div>
+      <div style={{ textAlign: "right", padding: "20px 20px 0"}}>
+        <Button>메모하기</Button>
       </div>
       <ContentSection>
         <ContentBox>
@@ -49,15 +54,13 @@ function Content() {
         </ContentBox>
       </ContentSection>
       <MenuWrap>
-        <Search>
-          검색
-        </Search>
+        <Search placeholder="검색" name="검색"></Search>
         <SortMenu>
           <option value="날짜순">날짜순</option>
           <option value="수정순">수정순</option>
         </SortMenu>
       </MenuWrap>
-    </>
+    </div>
   );
 }
 
