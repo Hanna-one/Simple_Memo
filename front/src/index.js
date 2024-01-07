@@ -14,6 +14,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, path: '/', element: <Content /> },
       { path: '/detail', element: <MemoDetail /> },
+      { path: '/memoInsert', element: <MemoDetail /> },
     ]
   }
 ])

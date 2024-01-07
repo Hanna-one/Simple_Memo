@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Button from "../style/Button";
 import { ContentSection, MenuWrap } from "../components/Section";
 import { MdColorLens } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 const Search = styled.input`
   width: 50%;
@@ -39,11 +40,18 @@ const ContentText = styled.div`
   overflow: hidden;
 `
 
+
 function Content() {
+  const navigate = useNavigate();
+
+  const handleMemo = () => {
+    navigate('/memoInsert');
+  }
+
   return (
     <div>
       <div style={{ textAlign: "right", padding: "20px 20px 0"}}>
-        <Button>메모하기</Button>
+        <Button onClick={handleMemo}>메모하기</Button>
       </div>
       <ContentSection>
         <ContentBox>

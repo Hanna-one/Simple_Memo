@@ -6,9 +6,9 @@ export const lightTheme = {
   header: "#f2f2f2",
   hoverColor: "#f2f2f2",
   border: "#888",
-  btnText: "#FFF",
+  btnText: "#000",
   bgBtnreg: "#F3AE5F",
-  bgBtndelete: "#DC4B48",
+  bgBtndelete: "#d1605f",
   bgBtndone: "#0B87BA",
 }
 
